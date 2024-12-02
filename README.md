@@ -54,7 +54,6 @@ Creating a Subset for Complete Data:
 
 Below is the head of the cleaned dataset, including the last step as well.
 
-<div style="overflow-x: auto;">
 
 | gameid           | teamname            | side   |   result | datacompleteness   |   golddiffat20 |   xpdiffat20 |   csdiffat20 |   killsdiffat20 |   assistsdiffat20 |   deathsdiffat20 |
 |:-----------------|:--------------------|:-------|---------:|:-------------------|---------------:|-------------:|-------------:|----------------:|------------------:|-----------------:|
@@ -64,7 +63,7 @@ Below is the head of the cleaned dataset, including the last step as well.
 | LOLTMNT99_135042 | FUT Esports         | Red    |        1 | complete           |          -1760 |        -1394 |          -66 |               2 |                 4 |               -2 |
 | LOLTMNT99_138196 | NASR eSports Turkey | Blue   |        0 | complete           |           1969 |         -738 |          -16 |               4 |                 4 |               -4 |
 
-</div>
+: {.responsive}
 
 # Univariate Analysis
 
