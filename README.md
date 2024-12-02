@@ -64,6 +64,12 @@ Below is the head of the cleaned dataset, including the last step as well.
 | LOLTMNT99_138196 | NASR eSports Turkey | Blue   |        0 | complete           |           1969 |         -738 |          -16 |               4 |                 4 |               -4 |
 
 ### Univariate Analysis
+<iframe
+  src="assets/uni_red.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 <iframe
   src="assets/uni_blue.html"
