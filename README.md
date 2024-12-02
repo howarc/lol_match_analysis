@@ -6,35 +6,36 @@ As such, this project aims to answer this question: is there a competitive edge 
 
 The dataset has 115152 rows, with every 12 rows representing a match between two teams -- each team has 6 rows of data, 1 for each player and 1 for overall team summary. The relevant columns that will be used for all of this project are as follows:
 
-> `gameid`: unique identifier for each game.
+`gameid`: unique identifier for each game.
 
-> `side`: either 'Red' or 'Blue', indicating where the team starts the game  
+`side`: either 'Red' or 'Blue', indicating where the team starts the game  
 
-> `result`: outcome of a match; '0' indicates defeat, '1' indicates victory
+`result`: outcome of a match; '0' indicates defeat, '1' indicates victory
 
-> `golddiffat20`: difference in total gold earned between teams at the 20-minute mark; indicative of strength in terms of economy
+`golddiffat20`: difference in total gold earned between teams at the 20-minute mark; indicative of strength in terms of economy
 
-> `xpdiffat20`: difference in experience points earned between teams at the 20-minute mark; indicative of strength in terms of levels
+`xpdiffat20`: difference in experience points earned between teams at the 20-minute mark; indicative of strength in terms of levels
 
-> `csdiffat20`: difference in creep score (CS) between teams at the 20-minute mark; contributes to overall gold and XP advantage
+`csdiffat20`: difference in creep score (CS) between teams at the 20-minute mark; contributes to overall gold and XP advantage
 
-> `killsat20`: number of kills by the team at the 20-minute mark
+`killsat20`: number of kills by the team at the 20-minute mark
 
-> `assistsat20`: number of assists by team at the 20-minute mark
+`assistsat20`: number of assists by team at the 20-minute mark
 
-> `deathsat20`: number of deaths by team at the 20-minute mark
+`deathsat20`: number of deaths by team at the 20-minute mark
 
-> `opp_killsat20`: opposing team's counterpart of killsat20
+`opp_killsat20`: opposing team's counterpart of killsat20
 
-> `opp_assistats20`: opposing team's counterpart of assistsat20
+`opp_assistats20`: opposing team's counterpart of assistsat20
 
-> `opp_deathsat20`: opposing team's counterpart of deathsat20
+`opp_deathsat20`: opposing team's counterpart of deathsat20
 
-> `datacompleteness`: either 'partial' or 'complete'; 'complete' rows contain these 20-minute mark summary statistics
+`datacompleteness`: either 'partial' or 'complete'; 'complete' rows contain these 20-minute mark summary statistics
 
 
 # Data Cleaning and Exploratory Data Analysis
 
+### Data Cleaning
 To prepare the dataset for analysis, the following data preprocessing steps were implemented:
 
 #### Column Selection and Transformation:
@@ -62,6 +63,13 @@ Below is the head of the cleaned dataset, including the last step as well.
 | LOLTMNT99_135042 | FUT Esports         | Red    |        1 | complete           |          -1760 |        -1394 |          -66 |               2 |                 4 |               -2 |
 | LOLTMNT99_138196 | NASR eSports Turkey | Blue   |        0 | complete           |           1969 |         -738 |          -16 |               4 |                 4 |               -4 |
 
-# Univariate Analysis
+### Univariate Analysis
+
+<iframe
+  src="assets/uni_blue.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
