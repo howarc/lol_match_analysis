@@ -71,6 +71,8 @@ Below is the head of the cleaned dataset, including the last step as well.
   frameborder="0"
 ></iframe>
 
+ The histogram displays the distribution of win rates for teams playing on the Red side. While the frequency of win rates peaks around 50%, an interesting secondary peak emerges within the 35-45% win rate range, suggesting that starting on the Red side may present a disadvantage.
+
 <iframe
   src="assets/uni_blue.html"
   width="800"
@@ -78,4 +80,12 @@ Below is the head of the cleaned dataset, including the last step as well.
   frameborder="0"
 ></iframe>
 
+The histogram displays the distribution of win rates for teams playing on the Blue side. The frequency of win rates peaks around 50%, but there is a noticeable increase in frequencies within the 55-65% win rate range, especially when compared against Red side's distribution. This pattern suggests that starting on the Blue side may offer a slight advantage.
 
+### Bivariate Analysis
+<iframe
+  src="assets/bi_violin.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
