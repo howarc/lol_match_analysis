@@ -69,16 +69,14 @@ Below is the head of the cleaned dataset, including the last step as well.
   width="800"
   height="600"
   frameborder="0"
-></iframe>
-The histogram displays the distribution of win rates for teams playing on the red side. While the frequency of win rates peaks around 50%, an interesting secondary peak emerges within the 35-45% win rate range, suggesting that starting on the red side may present a disadvantage.
+></iframe> The histogram displays the distribution of win rates for teams playing on the red side. While the frequency of win rates peaks around 50%, an interesting secondary peak emerges within the 35-45% win rate range, suggesting that starting on the red side may present a disadvantage.
 
 <iframe
   src="assets/uni_blue.html"
   width="800"
   height="600"
   frameborder="0"
-></iframe>
-The histogram displays the distribution of win rates for teams playing on the blue side. The frequency of win rates peaks around 50%, but there is a noticeable increase in frequencies within the 55-65% win rate range, especially when compared against red side's distribution. This pattern suggests that starting on the blue side may offer a slight advantage.
+></iframe> The histogram displays the distribution of win rates for teams playing on the blue side. The frequency of win rates peaks around 50%, but there is a noticeable increase in frequencies within the 55-65% win rate range, especially when compared against red side's distribution. This pattern suggests that starting on the blue side may offer a slight advantage.
 
 ### Bivariate Analysis
 <iframe
@@ -86,11 +84,11 @@ The histogram displays the distribution of win rates for teams playing on the bl
   width="800"
   height="600"
   frameborder="0"
-></iframe>
-The violin plot displays the distribution of team win rates for blue and red sides in a more comparable fashion. The blue side demonstrates a slightly higher median and a broader distribution above 50%, while the red side presents a more symmetrical spread centered around the 50% mark; this trend again suggests that blue side may have the competitve edge.
+></iframe> The violin plot displays the distribution of team win rates for blue and red sides in a more comparable fashion. The blue side demonstrates a slightly higher median and a broader distribution above 50%, while the red side presents a more symmetrical spread centered around the 50% mark; this trend again suggests that blue side may have the competitve edge.
 
 ### Interesting Aggregates
-'| Side   |   min_value |   max_value |   percentile_25 |   mean_value |   median_value |   percentile_75 |\n|:-------|------------:|------------:|----------------:|-------------:|---------------:|----------------:|\n| Blue   |           0 |           1 |        0.363636 |     0.482225 |       0.5      |        0.625    |\n| Red    |           0 |           1 |        0.326667 |     0.42857  |       0.433962 |        0.555556 |'
+| Side   |   min_value |   max_value |   percentile_25 |   mean_value |   median_value |   percentile_75 |\n|:-------|------------:|------------:|----------------:|-------------:|---------------:|----------------:|\n| Blue   |           0 |           1 |        0.363636 |     0.482225 |       0.5      |        0.625    |\n| Red    |           0 |           1 |        0.326667 |     0.42857  |       0.433962 |        0.555556 |
 The table highlights that the blue side has consistently higher values for the 25th percentile, mean, median, and 75th percentile in terms of win rate. This consistent trend across multiple statistical measures reinforces the idea that teams starting on the blue side tend to perform better overall.
 
 ### Imputation
+No missing values were filled in. There were only two scenarios for missing values: (1) missing 20-minute data when the `datacompleteness` was partial, and (2) missing 20-minute data when games ended before 20 minutes. In the first scenario, attempting to fill in missing values using statistics from other games would create frameworks that oversimplify the unique and unpredictable dynamics of each game. In second scenario, imputation would not be effective as the data did not occur in the first place, i.e., it was missing not at random. As such, dropping these rows were more appropriate than imputation. 
