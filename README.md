@@ -1,4 +1,6 @@
-# Introduction
+# League of Legends Match Outcome Predictor
+
+## Introduction
 
 Aside from the mainstream success of the animated series Arcane, League of Legends (LoL) has stood as a prominent video game in its own right. Two teams of five players against each other in a strategic contest to destroy the opposing team's Nexus. While teams and players control most in-game decisions, one uncontrollable factor is the side of the map teams are assigned at the start of a match.  Teams play on either the "red" or "blue" side, a distinction that significantly impacts strategy through differences in draft pick order and map layout. These differences shape gameplay and, in professional matches where every advantage matters, potentially decide outcomes. 
 
@@ -33,7 +35,7 @@ The dataset has 115152 rows, with every 12 rows representing a match between two
 `datacompleteness`: either 'partial' or 'complete'; 'complete' rows contain these 20-minute mark summary statistics
 
 
-# Data Cleaning and Exploratory Data Analysis
+## Data Cleaning and Exploratory Data Analysis
 
 ### Data Cleaning
 To prepare the dataset for analysis, the following data preprocessing steps were implemented:
@@ -90,27 +92,27 @@ Below is the head of the cleaned dataset, including the last step as well.
 
 | Side   |   min_value |   max_value |   percentile_25 |   mean_value |   median_value |   percentile_75 |
 |:-------|------------:|------------:|----------------:|-------------:|---------------:|----------------:|
-| Blue   |           0 |           1 |        0.363636 |     0.482225 |       0.5      |        0.625    |
-| Red    |           0 |           1 |        0.326667 |     0.42857  |       0.433962 |        0.555556 |
+| Blue   |           0 |           1 |          0.3636 |       0.4822 |         0.5000 |          0.6250 |
+| Red    |           0 |           1 |          0.3267 |      0.42857 |         0.4340 |          0.5556 |
 
 The table highlights that the blue side has consistently higher values for the 25th percentile, mean, median, and 75th percentile in terms of win rate. This consistent trend across multiple statistical measures reinforces the idea that teams starting on the blue side tend to perform better overall.
 
 ### Imputation
 No missing values were filled in. There were only two scenarios for missing values: (1) missing 20-minute data when the `datacompleteness` was partial, and (2) missing 20-minute data when games ended before 20 minutes. In the first scenario, attempting to fill in missing values using statistics from other games would create frameworks that oversimplify the unique and unpredictable dynamics of each game. In second scenario, imputation would not be effective as the data did not occur in the first place, i.e., it was missing not at random. As such, dropping these rows were more appropriate than imputation. 
 
-# Framing a Prediction Problem
+## Framing a Prediction Problem
 With evidence pointing to map side influencing game outcomes, we can explore a prediction problem: can we accurately predict a game’s result based on the starting side, alongside other in-game statistical metrics? Specifically, we aim to predict a game's outcome at the 20-minute mark, using the team's starting side and their accumulated in-game statistics up to that point.
 
 The classifier being built performs binary classification, with the response variable being `outcome`, as that determines if a team won the match. Accuracy was chosen as the evaluation metric because it provides a clear measure of the model's performance and is suitable for this dataset, which has balanced classes with one win and one loss per game. Since there is no specific emphasis on minimizing false positives or false negatives, metrics such as AUROC or F1-score are not prioritized. 
 
-# Baseline Model
+## Baseline Model
 The baseline model was trained using logistic regression using the following features: `side`, `killsdiffat20`,`deathsdiffat20`, `assistsdiffat20`. `side` is a nominal feature, for which one hot encoding was performed upon it. The other features were quantative, and were left as is. The dataset was split 70:30 and training and testing.
 
 After fitting the model, the baseline model achieved an accuracy of **0.7356** on the test set. While this result is a reasonable starting point, the model has significant room for improvement. One limitation of the model is the reliance on kills, assists, and deaths as primary predictors. Although these statistics capture direct combat outcomes, they are not always the strongest indicators of match success -- match outcomes are often influenced by broader factors, such as gold differences and objective control. Additionally, the lack of scaling for quantative features may have led to suboptimal performance.
 
 In the next section, we will refine this model by expanding the feature set to include more strategic metrics, as well as applying appropriate scaling to the quantitative features.
 
-# Final Model
+## Final Model
 The final model adds three new quantative features: `xpdiffat20`, `golddiffat20`, and `csdiffat20`. These features provide a more comprehensive view of a team's mid-game state, as they more closely capture resource-based advantages critical to determining match outcomes.
 
 The final model continues to use logistic regression, and now also uses StandardScaler to scale all quantitative features. Additionally, hyperparameter tuning was conducted using GridSearchCV to identify the optimal settings. The best hyperparameters selected were C=10, penalty='l2', and solver='lbfgs'.
