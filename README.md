@@ -68,8 +68,8 @@ Below is the head of the cleaned dataset, including the last step as well.
 ### Univariate Analysis
 <iframe
   src="assets/uni_red.html"
-  width="800"
-  height="600"
+  width="400"
+  height="300"
   frameborder="0"
 ></iframe> The histogram displays the distribution of win rates for teams playing on the red side. While the frequency of win rates peaks around 50%, an interesting secondary peak emerges within the 35-45% win rate range, suggesting that starting on the red side may present a disadvantage.
 
