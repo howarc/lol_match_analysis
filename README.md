@@ -87,6 +87,7 @@ Below is the head of the cleaned dataset, including the last step as well.
 ></iframe> The violin plot displays the distribution of team win rates for blue and red sides in a more comparable fashion. The blue side demonstrates a slightly higher median and a broader distribution above 50%, while the red side presents a more symmetrical spread centered around the 50% mark; this trend again suggests that blue side may have the competitve edge.
 
 ### Interesting Aggregates
+
 | Side   |   min_value |   max_value |   percentile_25 |   mean_value |   median_value |   percentile_75 |
 |:-------|------------:|------------:|----------------:|-------------:|---------------:|----------------:|
 | Blue   |           0 |           1 |        0.363636 |     0.482225 |       0.5      |        0.625    |
