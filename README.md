@@ -91,6 +91,7 @@ Below is the head of the cleaned dataset, including the last step as well.
 |:-------|------------:|------------:|----------------:|-------------:|---------------:|----------------:|
 | Blue   |           0 |           1 |        0.363636 |     0.482225 |       0.5      |        0.625    |
 | Red    |           0 |           1 |        0.326667 |     0.42857  |       0.433962 |        0.555556 |
+
 The table highlights that the blue side has consistently higher values for the 25th percentile, mean, median, and 75th percentile in terms of win rate. This consistent trend across multiple statistical measures reinforces the idea that teams starting on the blue side tend to perform better overall.
 
 ### Imputation
